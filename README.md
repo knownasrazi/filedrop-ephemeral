@@ -45,9 +45,9 @@ cd filedrop-ephemeral
 ## Stack details
 
 - **Language:** WebRTC + Vite
-- **Style:** Cream aesthetic, minimal border, generous whitespace
+- **Style:** Clean aesthetic, minimal border, generous whitespace
 - **License:** MIT
 
 ---
 
-*Built with cream and good intentions.*
+*Built with clean and good intentions.*
