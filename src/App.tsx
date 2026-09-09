@@ -1,12 +1,21 @@
-﻿export default function App() {
+import { useState } from "react";
+export default function App(){
+  const [file,setFile]=useState<File|null>(null);
+  const [link,setLink]=useState("");
+  function share(){
+    if(!file) return;
+    const url = URL.createObjectURL(file);
+    setLink(url);
+  }
   return (
-    <main className="min-h-screen bg-[#fdfcfa] text-[#1a1a1a]">
-      <div className="mx-auto max-w-3xl px-6 py-24">
-        <p className="text-sm tracking-widest text-[#9a9590]">filedrop-ephemeral</p>
-        <h1 className="mt-2 text-4xl font-light tracking-tight">Files that vanish on purpose.</h1>
-        <p className="mt-4 max-w-prose text-[#5a5754]">Ephemeral file sharing - drag, drop, share a link that expires.</p>
-        <div className="mt-8 rounded-2xl border border-[#ebe7e0] bg-white p-6">
-          <p className="text-sm text-[#9a9590]">Clean aesthetic - built for vibe coders.</p>
+    <main className="bg-[#fdfcfa] min-h-screen text-[#1a1a1a]">
+      <div className="mx-auto max-w-md px-6 py-16 text-center">
+        <h1 className="text-2xl font-light">filedrop-ephemeral</h1>
+        <p className="text-sm text-[#9a9590]">Files that vanish — link expires in 24h.</p>
+        <div className="mt-6 rounded-2xl border-2 border-dashed border-[#ebe7e0] bg-white p-8">
+          <input type="file" onChange={e=>setFile(e.target.files?.[0]||null)} />
+          <button onClick={share} className="mt-4 rounded-full bg-[#1a1a1a] px-6 py-2 text-sm text-white">Create link</button>
+          {link && <a href={link} className="mt-4 block text-sm text-[#5a5754] break-all">{link}</a>}
         </div>
       </div>
     </main>
