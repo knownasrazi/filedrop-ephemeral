@@ -5,6 +5,17 @@
 </div>
 
 ---
+## Demo
+
+![Demo](./public/demo.svg)
+
+**Live:** https://knownasrazi.github.io/filedrop-ephemeral/
+
+> Screenshot is a placeholder — Pages deploys on push to `main`.
+
+---
+
+
 
 <div align="center">
 
